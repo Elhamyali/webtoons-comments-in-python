@@ -78,7 +78,7 @@ commentText_span = list_items[0].find_element_by_class_name('u_cbox_contents')
 print(commentText_span.text)
 
 # Step 4: Ask driver to click on go back to parse for all past episode
-# driver.back()
+driver.back()
 
 # ############step 6- load the page and range of pages############
 # #define the lists
