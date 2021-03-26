@@ -19,9 +19,9 @@ from selenium.webdriver.chrome.options import Options
 # import js
 # import json
 # import numpy as np
-# import time
+import time
 # import pandas as pd         #to save CSV file
-# from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 # import ctypes         #to create text popup
 
 #Step 2- define browser for "webdriver" and add the “ — headless” argument
@@ -77,10 +77,18 @@ print(dislikes_span.text)
 commentText_span = list_items[0].find_element_by_class_name('u_cbox_contents')
 print(commentText_span.text)
 
-# Step 4: Ask driver to click on go back to parse for all past episode
-driver.back()
+# Extract all replies
+# Click on all
 
-# ############step 6- load the page and range of pages############
+# Step 6- Ask driver to click on back button to parse for all past episode
+driver.back()
+driver.execute_script("window.history.go(-1)")
+
+# Step 7- Scrape elements listed in Step 5
+
+
+
+# Step 6- load the page and range of pages############
 # #define the lists
 # names = []
 # prices = []
