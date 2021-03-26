@@ -28,3 +28,20 @@ This is a step-by-step guide to scrape Tested episodes with the following data e
 8. If available, click on next button for comments (pagination)
 9. Scrape comments and click previous page button
 10. Save the results as a CSV file: save to data frame and export as CSV file 
+
+## Final Output
+A CSV file with data elements:
+* Episode name
+* Episode number
+* Date of publication
+* Total number of loves
+* Total number of comments (both primary comments and replies)
+* Usernames
+* Number of likes per user
+* Number of dislikes per user
+* Number of replies per user
+* Comments description per user
+* Replies description per user
+
+## Resources
+Interested in scraping Webtoons comments in R? Visit https://github.com/bryce-wong/webtoon_comments_in_R.
