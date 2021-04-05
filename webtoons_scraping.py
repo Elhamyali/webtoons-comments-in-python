@@ -8,7 +8,7 @@ import pandas as pd
 
 
 options = Options()
-options.add_argument("--headless")
+# options.add_argument("--headless")
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 wait = WebDriverWait(driver, 10)
 url = "https://www.webtoons.com/en/challenge/tested/list?title_no=231173"
@@ -109,17 +109,17 @@ try:
                                 print(reply_data)
                                 append_data(reply_data)
 
-                        pages = driver.find_element_by_class_name("u_cbox_paginate").find_elements_by_css_selector("span.u_cbox_num_page")
-                        # find selected page - parent="strong"
-                        for j in range(len(pages)):
-                            if pages[j].find_element_by_xpath("..").tag_name == "strong":
-                                # if page divisible by 10 click next_page_button else click next page
-                                if int(pages[j].text) % 10 == 0:
-                                    next_pages_button = driver.find_element_by_class_name("u_cbox_next")
-                                    next_pages_button.click()
-                                else:
-                                    pages[j + 1].click()
-                                break
+                    pages = driver.find_element_by_class_name("u_cbox_paginate").find_elements_by_css_selector("span.u_cbox_num_page")
+                    # find selected page - parent="strong"
+                    for j in range(len(pages)):
+                        if pages[j].find_element_by_xpath("..").tag_name == "strong":
+                            # if page divisible by 10 click next_page_button else click next page
+                            if int(pages[j].text) % 10 == 0:
+                                next_pages_button = driver.find_element_by_class_name("u_cbox_next")
+                                next_pages_button.click()
+                            else:
+                                pages[j + 1].click()
+                            break
 
             # if no more pages go back
             except:
