@@ -65,6 +65,9 @@ try:
             episodes[i].click()
             wait.until(EC.staleness_of(list_items[0]))
 
+            comments_count = driver.find_element_by_class_name("u_cbox_count").text
+            data["comments_count"].append(comments_count)
+
             # scrape comments
             try:
                 while True:
