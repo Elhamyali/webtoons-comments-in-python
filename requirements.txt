@@ -1,0 +1,4 @@
+selenium~=3.141.0
+pandas~=1.2.3
+webdriver_manager
+openpyxl
